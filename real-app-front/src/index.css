@@ -1,0 +1,17 @@
+:root {
+  --background-color: rgb(194, 193, 193);
+  --navbar-bg: rgb(239, 238, 238);
+  --card-bg: rgb(109, 109, 109);
+  --text-color: #120157;
+  --toggle: rgb(109, 109, 109);
+  --toggle-bg: rgb(165, 163, 163);
+}
+
+[data-theme="dark"] {
+  --background-color: rgb(70, 70, 70);
+  --navbar-bg: rgb(109, 109, 109);
+  --card-bg: rgb(109, 109, 109);
+  --text-color: #5bbcff;
+  --toggle: rgb(109, 109, 109);
+  --toggle-bg: #8a8282;
+}

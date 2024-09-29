@@ -1,0 +1,25 @@
+@local=http://localhost:3900/api
+
+### Register
+POST {{local}}/users
+Content-Type: application/json
+
+{
+    "name": "daniel", 
+    "email": "a@a.com", 
+    "password": "Aa123456",
+    "biz": true
+}
+
+### Authenticate
+POST {{local}}/auth
+Content-Type: application/json
+
+{
+    "email": "d@gmai.com", 
+    "password": "Aa123456"
+}
+
+### Authorize
+GET {{local}}/users/me
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmMzNjgzMTQ5YTkwZDI3ZGQ4MzExMjQiLCJiaXoiOnRydWUsImlhdCI6MTcyNDA4MjI5M30.SzYoDwzCHkREGWg_NFXx33babnLHGkMbuxUkbx4yr6I
