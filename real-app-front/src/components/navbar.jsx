@@ -55,14 +55,16 @@ function NavBar(props) {
           )}
           {user && (
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <form action="" style={{ marginRight: "27em" }}>
-                <input
-                  onChange={(e) => props.setSearch(e.target.value)}
-                  className="form-control"
-                  type="search"
-                  placeholder="Search"
-                />
-              </form>
+              <li className="nav-item">
+                <form>
+                  <input
+                    onChange={(e) => props.setSearch(e.target.value)}
+                    className="form-control"
+                    type="search"
+                    placeholder="Search"
+                  />
+                </form>
+              </li>
               <li className="nav-item">
                 <NavLink to="/" className="nav-link">
                   Home

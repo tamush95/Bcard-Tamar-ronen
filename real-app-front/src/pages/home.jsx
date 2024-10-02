@@ -29,8 +29,11 @@ function Home(props) {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="container" style={{ color: "var(--text-color)" }}>
-      <PageHeader title={<Logo />} description="why you should use this app" />
+    <div className="container" style={{ fontSize: "1.5em", marginTop: "2em" }}>
+      <PageHeader
+        title={<Logo />}
+        description="Welcome to our great app, where you can create and explore business cards for anything you can possibly imagin."
+      />
 
       <div className="container my-4">
         <div className="row">

@@ -1,0 +1,13 @@
+.test {
+  min-height: 100vh;
+}
+.card-img-top {
+  width: 70%;
+  height: 100%;
+  margin: auto;
+  border-radius: 10%;
+}
+.card-body {
+  margin: auto;
+  padding: 3em;
+}

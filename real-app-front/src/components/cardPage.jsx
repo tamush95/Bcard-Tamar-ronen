@@ -3,6 +3,7 @@ import PageHeader from "./common/pageHeader";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getCardById } from "../services/cardServices";
+import "./cardPage.css";
 
 function CardPage() {
   const [card, setCard] = useState([]);
@@ -17,13 +18,14 @@ function CardPage() {
   }, []);
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-      }}
-    >
+    <div className="test">
       <div
-        style={{ display: "flex", justifyContent: "center", paddingTop: "5%" }}
+        style={{
+          display: "flex",
+
+          justifyContent: "center",
+          paddingTop: "5%",
+        }}
       >
         <div
           className="card"
@@ -36,7 +38,7 @@ function CardPage() {
             color: "var(--text-color)",
             width: "90vw",
             display: "flex",
-            flexDirection: "row",
+            flexDirection: "column",
             maxHeight: "100vh",
             marginLeft: "100px",
             padding: "3%",

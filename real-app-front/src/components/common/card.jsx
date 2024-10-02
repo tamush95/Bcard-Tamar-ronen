@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { likeUnlikeCard } from "../../services/cardServices";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/auth.context";
 
 function Card(props) {
+  const { user } = useAuth();
   const navigate = useNavigate();
   const [favorite, setFavorite] = useState(false);
   const handleFavorite = async () => {
@@ -15,10 +17,18 @@ function Card(props) {
   }
   return (
     <div className="col-lg-4 col-md-6 mb-4 d-flex align-items-stretch">
-      <div className="card h-100" style={{ background: "var(--card-bg)" }}>
+      <div
+        className="card h-100"
+        style={{
+          background: "var(--card-bg)",
+          width: "500px",
+          textAlign: "center",
+          position: "relative",
+        }}
+      >
         <div
           className="card-img-container"
-          style={{ height: "272px", width: "348px" }}
+          style={{ height: "300px", width: "100%" }}
         >
           <img
             src={props.url}
@@ -26,26 +36,37 @@ function Card(props) {
             alt={props.title}
             style={{
               width: "100%",
-              height: "100%",
               objectFit: "cover",
             }}
           />
         </div>
-        <div className="card-body d-flex flex-column">
-          <h5 className="card-title">{props.title}</h5>
+        <div
+          className="card-body d-flex flex-column justify-content-center align-items-center"
+          style={{ maxWidth: "80vw", overflow: "hidden" }}
+        >
+          <h5
+            className="card-title"
+            style={{ fontWeight: "bold", fontSize: "1em" }}
+          >
+            {props.title}
+          </h5>
           <p className="card-text">{props.subtitle}</p>
-          <div
-            onClick={handleFavorite}
-            className={["bi bi-heart-fill", favorite && "text-danger"].join(
-              " "
-            )}
-          ></div>
+          {user && (
+            <div
+              onClick={handleFavorite}
+              className={["bi bi-heart-fill", favorite && "text-danger"].join(
+                " "
+              )}
+            ></div>
+          )}
           <button
             className="mx-auto"
             style={{
               width: "7em",
-
+              position: "absolute",
+              bottom: "3%",
               borderRadius: "10px",
+              margin: "auto",
             }}
             onClick={MoveToCardPage}
           >
