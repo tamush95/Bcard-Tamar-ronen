@@ -1,4 +1,4 @@
 {
   "apiUrl": "http://localhost:3900/api",
-  "BcardUrl": "https://monkfish-app-z9uza.ondigitalocean.app/bcard2"
+  "mainURL": "http://localhost:3050/api"
 }

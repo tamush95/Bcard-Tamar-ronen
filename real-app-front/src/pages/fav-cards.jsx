@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "../components/common/card";
 import { useAuth } from "../contexts/auth.context";
+import mainURL from "../config.json";
 
 function FavCards() {
   const [cards, setCards] = useState([]);
@@ -13,9 +14,7 @@ function FavCards() {
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get(
-        "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards"
-      );
+      const res = await axios.get("http://localhost:3050/api/cards");
       setCards(res.data);
       console.log(res.data);
     })();

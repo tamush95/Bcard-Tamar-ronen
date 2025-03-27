@@ -1,7 +1,7 @@
 import axios from "axios";
 import config from "../config.json";
 
-axios.defaults.baseURL = config.BcardUrl;
+axios.defaults.baseURL = config.mainURL;
 
 export function setDefaultCommonHeaders(headerName, value) {
   axios.defaults.headers.common[headerName] = value;

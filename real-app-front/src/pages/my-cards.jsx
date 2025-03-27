@@ -3,15 +3,14 @@ import PageHeader from "../components/common/pageHeader";
 import Logo from "../components/logo";
 import { useEffect, useState } from "react";
 import { deleteCard } from "../services/cardServices";
+import mainURL from "../config.json";
 
 function MyCards() {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get(
-        "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards/my-cards"
-      );
+      const res = await axios.get(`http://localhost:3050/api/cards/my-cards`);
       setCards(res.data);
     })();
   }, [cards]);

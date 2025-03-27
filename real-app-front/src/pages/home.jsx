@@ -11,9 +11,7 @@ function Home(props) {
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get(
-        "https://monkfish-app-z9uza.ondigitalocean.app/bcard2/cards"
-      );
+      const res = await axios.get("http://localhost:3050/api/cards");
       const filteredCards = res.data.filter((card) =>
         card.title.includes(props.searchValue)
       );

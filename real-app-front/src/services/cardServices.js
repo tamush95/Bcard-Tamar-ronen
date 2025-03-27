@@ -3,6 +3,8 @@ import usersService from "./usersService";
 
 export function createCard(card) {
   usersService.refreshToken();
+  console.log(card);
+
   return httpService.post("/cards", card);
 }
 export function deleteCard(cardId) {

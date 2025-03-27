@@ -35,7 +35,6 @@ function SignUp() {
         city: "",
         street: "",
         houseNumber: 0,
-        zip: 0,
       },
       isBusiness: false,
     },
@@ -87,7 +86,6 @@ function SignUp() {
             city: Joi.string().required(),
             street: Joi.string().required(),
             houseNumber: Joi.number().required(),
-            zip: Joi.number(),
           })
           .required(),
         isBusiness: Joi.boolean().required(),
@@ -227,20 +225,13 @@ function SignUp() {
           />
           <Input
             {...form.getFieldProps("address.houseNumber")}
-            type="number"
+            type="text"
             label="House number"
             required
             error={
               form.touched.address?.houseNumber &&
               form.errors.address?.houseNumber
             }
-          />
-          <Input
-            {...form.getFieldProps("address.zip")}
-            type="number"
-            label="Zip"
-            required
-            error={form.touched.address?.zip && form.errors.address?.zip}
           />
         </div>
         <CheckBox

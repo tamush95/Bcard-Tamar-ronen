@@ -23,7 +23,7 @@ export function createUser(user) {
 }
 
 export async function login(credentials) {
-  const response = await httpService.post("/users/login", credentials);
+  const response = await httpService.post("/auth", credentials);
   setToken(response.data);
   const user = await getUserById();
   return user;
@@ -35,7 +35,6 @@ export async function getUserById() {
 export function getUser() {
   try {
     const token = getJWT();
-    console.log(jwtDecode(token));
 
     return jwtDecode(token);
   } catch {

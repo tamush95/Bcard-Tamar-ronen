@@ -43,8 +43,7 @@ function CreateCard() {
         phone: Joi.string()
           .ruleset.regex(/0[0-9]{1,2}\-?\s?[0-9]{3}\s?[0-9]{4}/)
 
-          .rule({ message: 'user "phone" mast be a valid phone number' })
-          .required(),
+          .rule({ message: 'user "phone" mast be a valid phone number' }),
         email: Joi.string()
           .ruleset.pattern(
             /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
